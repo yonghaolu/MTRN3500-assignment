@@ -26,10 +26,10 @@ EmbeddedDevice::PCM3718::~PCM3718(){
 }
 
 uint16_t EmbeddedDevice::PCM3718::digitalInput(){
+    uint8_t lowByte,highByte;
     lowByte = eops->inb(base + 0x03);
     highByte = eops->inb(base + 0x0b);
-    //input = (highByte<<8)|(lowByte & 0xff);
-
+	
     return (highByte<<8)|(lowByte & 0xff);
 }
 
