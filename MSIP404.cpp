@@ -41,8 +41,12 @@ int32_t EmbeddedDevice::MSIP404::readChannel(uint8_t channel)
 		exit(0);
 	}
 	
-	EmbeddedDevice::encoder en;
-
+	
+	union encoder{
+    	int i;
+    	char c[4];
+	};
+	encoder en;
     int x;
 	for (x = 0; x < 4; x++) {
 		en.c[x] = eops -> inb(base + x + 4 * channel);

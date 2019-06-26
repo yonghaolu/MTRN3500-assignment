@@ -6,7 +6,7 @@
 * When DEBUG is on, inb, outb and ioperm will print strings out into the console. 
 * When DEBUG is on, both ioperm and outb will always return 0.
 */
-#define DEBUG
+//#define DEBUG
 
 #ifdef DEBUG
 #include <iostream>

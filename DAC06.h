@@ -2,6 +2,7 @@
 #define DAC06_MODULE_H
 
 #include <stdint.h>
+#include <iostream>
 //#include <sys/io.h>
 #include "EmbeddedOperations.h"
 
@@ -26,7 +27,6 @@ namespace EmbeddedDevice {
       // NOTE: All sys/io function calls must be made through the EmbeddedOperations class
       EmbeddedOperations *eops;
       uint32_t base;
-      uint16_t RawValue;
       uint16_t output;
 
   };

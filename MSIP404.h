@@ -32,12 +32,6 @@ namespace EmbeddedDevice {
       uint32_t base;
   };
 
-  union encoder{
-    int i;
-    char c[4];
-  }; 
-  
-  //encoder en;
 }
 
 #endif // MSIP404_MODULE_H
