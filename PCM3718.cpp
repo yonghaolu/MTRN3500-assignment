@@ -113,7 +113,7 @@ double EmbeddedDevice::PCM3718::analogInput(uint8_t channel) const{
     high = eops-> inb(base + 0x01);
 
     //return converted data
-    rawVoltage = (low>>8)|(high <<4);
+    rawVoltage = (low>>4)|(high <<4);
 
     switch (range)
     {
