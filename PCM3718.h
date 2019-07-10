@@ -32,14 +32,9 @@ namespace EmbeddedDevice {
       friend std::ostream& operator<<(std::ostream& output, const PCM3718& pcm);
 
     private:
-      // NOTE: All sys/io function calls must be made through the EmbeddedOperations class
       EmbeddedOperations *eops;
       uint32_t base;
-      uint8_t highByte;
-	    uint8_t lowByte;
-	    uint8_t ByteInput;
       uint8_t range;
-      uint16_t input;      
   };
 
   // For newer versions of g++, a friend function needs a matching declaration provided

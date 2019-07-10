@@ -27,7 +27,6 @@ namespace EmbeddedDevice {
       bool operator!();
 
     private:
-      // NOTE: All sys/io function calls must be made through the EmbeddedOperations class
       EmbeddedOperations *eops;
       uint32_t base;
   };

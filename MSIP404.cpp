@@ -8,7 +8,7 @@ EmbeddedDevice::MSIP404::MSIP404(EmbeddedOperations* eops, uint32_t base_addr){
     this->base = base_addr;
     
 
-	if(eops -> ioperm(base, 16, 1)!=0){
+	if(eops -> ioperm(base, 32, 1)!=0){
 		std::cout<<"faill perm"<<std::endl;
 	} 
 
@@ -46,7 +46,9 @@ int32_t EmbeddedDevice::MSIP404::readChannel(uint8_t channel)
     	int i;
     	char c[4];
 	};
+
 	encoder en;
+
     int x;
 	for (x = 0; x < 4; x++) {
 		en.c[x] = eops -> inb(base + x + 4 * channel);
@@ -70,17 +72,17 @@ bool EmbeddedDevice::MSIP404::readIndex(uint8_t channel)
 		return (eops->inb(pulse_base) & pulseBit_5);// channel 1, bit 5
 	}
 
-	else {				//(channel == 2) 
+	else {   //(channel == 2) 
 		return (eops->inb(pulse_base + 1) & pulseBit_7);// channel 2, bit 7
 	}
 	
 
 }
 
-bool EmbeddedDevice::MSIP404::operator!()
+bool EmbeddedDevice::MSIP404::operator!()//reset all channels
 {
 	for(int i=0;i<8;i++){
-		eops->outb(0,base + 1);
+		eops->outb(0,base + i);
 	}
 	
 	return true;

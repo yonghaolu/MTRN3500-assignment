@@ -12,6 +12,7 @@
  * welcome to add private member variables and private methods to the provided classes, or create
  * your own underlying classes to provide the requested functionality as long as all of the
  * functionality for the DAC06 can be accessed using the methods in the provided classes.
+ * 		dac.analogOutputVoltage(0,msi.readChannel(0));
  */
 
 namespace EmbeddedDevice {
@@ -27,8 +28,6 @@ namespace EmbeddedDevice {
       // NOTE: All sys/io function calls must be made through the EmbeddedOperations class
       EmbeddedOperations *eops;
       uint32_t base;
-      uint16_t output;
-
   };
 }
 
